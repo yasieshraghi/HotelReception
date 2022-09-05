@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D9949C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReception.Common", "HotelReception.Common\HotelReception.Common.csproj", "{934DBC71-6179-459C-BAA0-00E37F7DE018}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReception.ViewModel", "HotelReception.ViewModel\HotelReception.ViewModel.csproj", "{19D1B2D0-A886-43EC-A9E8-CD6088386B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{934DBC71-6179-459C-BAA0-00E37F7DE018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934DBC71-6179-459C-BAA0-00E37F7DE018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{934DBC71-6179-459C-BAA0-00E37F7DE018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D1B2D0-A886-43EC-A9E8-CD6088386B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D1B2D0-A886-43EC-A9E8-CD6088386B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D1B2D0-A886-43EC-A9E8-CD6088386B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D1B2D0-A886-43EC-A9E8-CD6088386B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{43CC34AA-234E-4C19-BEC1-AED902AF7A9E} = {1343A6AB-D766-45DF-8027-F6CE99B019CD}
 		{2C931D09-451A-438C-958A-DDA725D1093E} = {8E961624-0C5D-4CE1-8252-778FEAA95684}
 		{934DBC71-6179-459C-BAA0-00E37F7DE018} = {D9949C65-AB40-449A-9127-4B2C790BA56D}
+		{19D1B2D0-A886-43EC-A9E8-CD6088386B79} = {2AD960B9-2D59-4E00-9747-13443B3E6D62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1FFF993-5232-45F2-990E-AF511292206F}

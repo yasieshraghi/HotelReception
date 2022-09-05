@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{934DBC71-6179-459C-BAA0-00E37F7DE018}</ProjectGuid>
+    <ProjectGuid>{19D1B2D0-A886-43EC-A9E8-CD6088386B79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HotelReception.Common</RootNamespace>
-    <AssemblyName>HotelReception.Common</AssemblyName>
+    <RootNamespace>HotelReception.ViewModel</RootNamespace>
+    <AssemblyName>HotelReception.ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,9 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consts\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Utility\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

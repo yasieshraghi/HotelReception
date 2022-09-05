@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BaseEntity\" />
     <Folder Include="Entities\" />
     <Folder Include="Migrations\" />
     <Folder Include="Model\" />
