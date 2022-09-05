@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HotelReception/obj/Debug
+/HotelReception/.vs/HotelReception/v16
+/HotelReception/bin/Debug
