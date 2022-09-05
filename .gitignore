@@ -5,3 +5,6 @@
 /HotelReception/obj/Debug
 /HotelReception/.vs/HotelReception/v16
 /HotelReception/bin/Debug
+/HotelReception.App/obj/Debug
+/HotelReception.DataStorage/obj/Debug
+/packages/EntityFramework.6.4.4
