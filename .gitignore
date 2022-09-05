@@ -3,8 +3,17 @@
 ################################################################################
 
 /HotelReception/obj/Debug
+/HotelReception/.vs
 /HotelReception/.vs/HotelReception/v16
 /HotelReception/bin/Debug
 /HotelReception.App/obj/Debug
 /HotelReception.DataStorage/obj/Debug
 /packages/EntityFramework.6.4.4
+/HotelReception.Business/bin/Debug
+/HotelReception.Common/bin/Debug
+/HotelReception.Common/obj/Debug
+/HotelReception.DataStorage/bin/Debug
+/HotelReception.ViewModel/obj/Debug
+/HotelReception.ViewModel/bin/Debug
+/HotelReception.Business/obj/Debug
+/HotelReception.App/bin/Debug
