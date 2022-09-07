@@ -14,19 +14,6 @@ namespace HotelReception.DataStorage.DbContexts.Config
         {
             ToTable("CustomerInfo", "dbo");
             HasKey(c => c.Id);
-
-            HasMany(a => a.CareTakerReservations)
-                .WithRequired(b => b.CareTaker)
-                .HasForeignKey(b => b.CareTakerId);
-
-
-            HasMany(a => a.RoomerCareTakers)
-                .WithRequired(b => b.CareTaker)
-                .HasForeignKey(b => b.CareTakerId);
-
-            HasMany(a => a.RoomerPartners)
-                .WithRequired(b => b.Partner)
-                .HasForeignKey(b => b.CustomerPartnerId);
         }
     }
 }

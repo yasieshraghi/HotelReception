@@ -55,23 +55,17 @@
     <Compile Include="DbContexts\Config\CustomerInfoConfig.cs" />
     <Compile Include="DbContexts\Config\ReservationConfig.cs" />
     <Compile Include="DbContexts\Config\RoomConfig.cs" />
-    <Compile Include="DbContexts\Config\RoomerConfig.cs" />
     <Compile Include="DbContexts\HotelReceptionContext.cs" />
     <Compile Include="Entities\CustomerInfoModel.cs" />
-    <Compile Include="Entities\RoomerModel.cs" />
     <Compile Include="Entities\RoomModel.cs" />
     <Compile Include="Entities\ReservationModel.cs" />
-    <Compile Include="Migrations\202209072247107_start.cs" />
-    <Compile Include="Migrations\202209072247107_start.designer.cs">
-      <DependentUpon>202209072247107_start.cs</DependentUpon>
+    <Compile Include="Migrations\202209072322430_Init.cs" />
+    <Compile Include="Migrations\202209072322430_Init.designer.cs">
+      <DependentUpon>202209072322430_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MyDataSeed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202209072247107_start.resx">
-      <DependentUpon>202209072247107_start.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,6 +76,11 @@
       <Project>{19D1B2D0-A886-43EC-A9E8-CD6088386B79}</Project>
       <Name>HotelReception.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209072322430_Init.resx">
+      <DependentUpon>202209072322430_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

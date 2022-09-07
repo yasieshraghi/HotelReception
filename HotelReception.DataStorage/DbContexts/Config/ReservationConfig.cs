@@ -19,11 +19,6 @@ namespace HotelReception.DataStorage.DbContexts.Config
                 .WithMany(c => c.RoomReservations)
                 .HasForeignKey(b => b.RoomId)
                 .WillCascadeOnDelete(false);
-
-            HasRequired(a => a.CareTaker)
-                .WithMany(c => c.CareTakerReservations)
-                .HasForeignKey(b => b.CareTakerId)
-                .WillCascadeOnDelete(false);
         }
     }
 }
