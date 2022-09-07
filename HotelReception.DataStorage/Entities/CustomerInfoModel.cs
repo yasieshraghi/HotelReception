@@ -18,7 +18,6 @@ namespace HotelReception.DataStorage.Entities
         [StringLength(20)]
         public string PassportNo { get; set; }
         public int Age { get; set; }
-        public bool HasCareTaker { get; set; }
 
     }
 }

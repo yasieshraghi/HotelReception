@@ -6,7 +6,6 @@ namespace HotelReception.DataStorage.Entities
 {
     public class ReservationModel: BaseModel<long>
     {
-        public int CareTakerId { get; set; }
         public int RoomId { get; set; }
 
         public int StayDurationPerDay { get; set; }
