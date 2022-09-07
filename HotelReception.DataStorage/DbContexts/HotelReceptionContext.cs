@@ -1,18 +1,20 @@
 ﻿using System.Data.Entity;
+using HotelReception.DataStorage.DbContexts.Config;
 using HotelReception.DataStorage.Entities;
 
 namespace HotelReception.DataStorage.DbContexts
 {
     public class HotelReceptionContext : DbContext
     {
-        //todo:DbContext
-        public readonly string ConnectionString = "";
-
-         
-        public HotelReceptionContext(string connectionString) :base(connectionString)
+        static HotelReceptionContext()
         {
-            
+            Database.SetInitializer<HotelReceptionContext>(null);
         }
+        public HotelReceptionContext() : base("HotelReception")
+        {
+
+        }
+
         public DbSet<CustomerInfoModel> CustomerInfo { get; set; }
         public DbSet<ReservationModel> Reservation { get; set; }
         public DbSet<RoomerModel> Roomer { get; set; }
@@ -23,18 +25,17 @@ namespace HotelReception.DataStorage.DbContexts
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<CustomerInfoModel>()
-                .HasKey(c => c.Id);
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ReservationModel>()
-                .HasKey(c => c.Id);
 
-            modelBuilder.Entity<RoomerModel>()
-                .HasKey(c => c.Id);
-                //.HasRequired(c=>c.CareTakerId).h(c=>c.);
+            modelBuilder.Configurations.Add(new CustomerInfoConfig());
 
-             modelBuilder.Entity<RoomModel>()
-                .HasKey(c => c.Id);
+            modelBuilder.Configurations.Add(new ReservationConfig());
+
+            modelBuilder.Configurations.Add(new RoomerConfig());
+
+            modelBuilder.Configurations.Add(new RoomConfig());
+
 
         }
     }

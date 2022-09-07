@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using HotelReception.DataStorage.BaseEntity;
 using HotelReception.ViewModel.Enums;
 
@@ -18,6 +19,12 @@ namespace HotelReception.DataStorage.Entities
         [StringLength(20)]
         public string PassportNo { get; set; }
         public int Age { get; set; }
+        public bool HasCareTaker { get; set; }
+
+        public virtual ICollection<ReservationModel> CareTakerReservations { get; set; }
+        public virtual ICollection<RoomerModel> RoomerCareTakers { get; set; }
+        public virtual ICollection<RoomerModel> RoomerPartners { get; set; }
+
 
     }
 }

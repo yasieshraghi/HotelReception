@@ -52,14 +52,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity\BaseModel.cs" />
+    <Compile Include="DbContexts\Config\CustomerInfoConfig.cs" />
+    <Compile Include="DbContexts\Config\ReservationConfig.cs" />
+    <Compile Include="DbContexts\Config\RoomConfig.cs" />
+    <Compile Include="DbContexts\Config\RoomerConfig.cs" />
     <Compile Include="DbContexts\HotelReceptionContext.cs" />
     <Compile Include="Entities\CustomerInfoModel.cs" />
+    <Compile Include="Entities\RoomerModel.cs" />
     <Compile Include="Entities\RoomModel.cs" />
     <Compile Include="Entities\ReservationModel.cs" />
+    <Compile Include="Migrations\202209072247107_start.cs" />
+    <Compile Include="Migrations\202209072247107_start.designer.cs">
+      <DependentUpon>202209072247107_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\202209072247107_start.resx">
+      <DependentUpon>202209072247107_start.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
