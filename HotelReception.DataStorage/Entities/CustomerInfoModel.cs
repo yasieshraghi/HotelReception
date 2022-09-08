@@ -21,7 +21,7 @@ namespace HotelReception.DataStorage.Entities
         public int Age { get; set; }
         public bool HasCareTaker { get; set; }
 
-        public virtual ICollection<ReservationModel> CareTakerReservations { get; set; }
+        public virtual ICollection<ReservationModel> Reservations { get; set; }
 
 
     }

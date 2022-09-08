@@ -14,6 +14,6 @@ namespace HotelReception.DataStorage.Entities
         public byte BedNumbers { get; set; }
         public bool IsActive { get; set; }
 
-        public virtual ICollection<ReservationModel> RoomReservations { get; set; }
+        public virtual ICollection<ReservationModel> Reservations { get; set; }
     }
 }

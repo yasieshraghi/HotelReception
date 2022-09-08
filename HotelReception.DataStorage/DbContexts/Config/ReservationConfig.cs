@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 using HotelReception.DataStorage.Entities;
 
 namespace HotelReception.DataStorage.DbContexts.Config
@@ -16,7 +11,7 @@ namespace HotelReception.DataStorage.DbContexts.Config
             HasKey(c => c.Id);
 
             HasRequired(a => a.Room)
-                .WithMany(c => c.RoomReservations)
+                .WithMany(c => c.Reservations)
                 .HasForeignKey(b => b.RoomId)
                 .WillCascadeOnDelete(false);
         }

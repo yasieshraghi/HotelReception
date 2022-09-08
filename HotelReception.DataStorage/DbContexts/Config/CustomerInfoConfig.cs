@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 using HotelReception.DataStorage.Entities;
 
 namespace HotelReception.DataStorage.DbContexts.Config
@@ -14,6 +9,11 @@ namespace HotelReception.DataStorage.DbContexts.Config
         {
             ToTable("CustomerInfo", "dbo");
             HasKey(c => c.Id);
+
+            HasMany(a => a.Reservations)
+                .WithRequired(b => b.CustomerInfo)
+                .HasForeignKey(b => b.CustomerInfoId)
+                .WillCascadeOnDelete(false);
         }
     }
 }
