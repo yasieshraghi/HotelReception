@@ -104,6 +104,7 @@ namespace HotelReception.Business
                 entityModel.LastName = model.LastName;
 
                 var customerInfoModel = Instance.CustomerInfo.Attach(entityModel);
+                Instance.Entry(entityModel).State = EntityState.Modified;
                 Instance.SaveChanges();
 
                 return new OperationResult<CustomerInfoViewModel>()

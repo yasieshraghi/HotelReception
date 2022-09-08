@@ -17,7 +17,7 @@ namespace HotelReception
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerInfoForm());
+            Application.Run(new ReceptionForm());
         }
     }
 }

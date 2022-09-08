@@ -46,6 +46,7 @@ namespace HotelReception.Forms
             this.txtAge = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnGoToReception = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,11 +209,23 @@ namespace HotelReception.Forms
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnGoToReception
+            // 
+            this.btnGoToReception.Enabled = false;
+            this.btnGoToReception.Location = new System.Drawing.Point(468, 127);
+            this.btnGoToReception.Name = "btnGoToReception";
+            this.btnGoToReception.Size = new System.Drawing.Size(119, 34);
+            this.btnGoToReception.TabIndex = 241;
+            this.btnGoToReception.Text = "Go To Reception";
+            this.btnGoToReception.UseVisualStyleBackColor = true;
+            this.btnGoToReception.Click += new System.EventHandler(this.btnGoToReception_Click);
+            // 
             // CustomerInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 450);
+            this.Controls.Add(this.btnGoToReception);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblAge);
@@ -258,5 +271,6 @@ namespace HotelReception.Forms
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnGoToReception;
     }
 }

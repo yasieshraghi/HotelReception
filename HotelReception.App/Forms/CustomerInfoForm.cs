@@ -11,7 +11,7 @@ using HotelReception.ViewModel.Model.Response;
 
 namespace HotelReception.Forms
 {
-    public partial class CustomerInfoForm : Form
+    public partial class CustomerInfoForm : MasterForm
     {
         private CustomerInfoViewModel _customerEdit = null;
 
@@ -73,6 +73,7 @@ namespace HotelReception.Forms
             txtPassport.Text = _customerEdit.PassportNo;
             txtPhoneNumber.Text = _customerEdit.PhoneNumber;
             txtEmailAddress.Text = _customerEdit.EmailAddress;
+            btnGoToReception.Enabled = true;
         }
 
         private void CmbGenderDataBind()
@@ -188,6 +189,7 @@ namespace HotelReception.Forms
             txtEmailAddress.Text = string.Empty;
 
             _customerEdit = null;
+            btnGoToReception.Enabled = false;
             GetList();
         }
         private void GetList()
@@ -223,6 +225,11 @@ namespace HotelReception.Forms
             dataGridCustomer.Columns["CustomerInfoId"].Visible = false;
         }
 
-        
+        private void btnGoToReception_Click(object sender, EventArgs e)
+        {
+            SetDataCustomer(_customerEdit);
+
+            Close();
+        }
     }
 }
