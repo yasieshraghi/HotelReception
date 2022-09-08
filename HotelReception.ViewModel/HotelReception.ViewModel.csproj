@@ -43,10 +43,9 @@
   <ItemGroup>
     <Compile Include="Enums\GenderType.cs" />
     <Compile Include="Enums\RoomType.cs" />
+    <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

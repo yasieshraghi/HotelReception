@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseBusiness.cs" />
+    <Compile Include="CustomerInfoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HotelReception.Common\HotelReception.Common.csproj">
+      <Project>{934DBC71-6179-459C-BAA0-00E37F7DE018}</Project>
+      <Name>HotelReception.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReception.DataStorage\HotelReception.DataStorage.csproj">
+      <Project>{43CC34AA-234E-4C19-BEC1-AED902AF7A9E}</Project>
+      <Name>HotelReception.DataStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReception.ViewModel\HotelReception.ViewModel.csproj">
+      <Project>{19D1B2D0-A886-43EC-A9E8-CD6088386B79}</Project>
+      <Name>HotelReception.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
