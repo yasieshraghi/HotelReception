@@ -38,8 +38,8 @@ namespace HotelReception.Forms
             this.lblFirstNameIs = new System.Windows.Forms.Label();
             this.lblLastNameIs = new System.Windows.Forms.Label();
             this.btnSelectRoom = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRoomNoIs = new System.Windows.Forms.Label();
+            this.lblRoomNo = new System.Windows.Forms.Label();
             this.lblArrow1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -139,23 +139,23 @@ namespace HotelReception.Forms
             this.btnSelectRoom.UseVisualStyleBackColor = true;
             this.btnSelectRoom.Click += new System.EventHandler(this.btnSelectRoom_Click);
             // 
-            // label1
+            // lblRoomNoIs
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 249;
-            this.label1.Text = "_";
+            this.lblRoomNoIs.AutoSize = true;
+            this.lblRoomNoIs.Location = new System.Drawing.Point(79, 57);
+            this.lblRoomNoIs.Name = "lblRoomNoIs";
+            this.lblRoomNoIs.Size = new System.Drawing.Size(13, 13);
+            this.lblRoomNoIs.TabIndex = 249;
+            this.lblRoomNoIs.Text = "_";
             // 
-            // label2
+            // lblRoomNo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 248;
-            this.label2.Text = "Room No:";
+            this.lblRoomNo.AutoSize = true;
+            this.lblRoomNo.Location = new System.Drawing.Point(13, 58);
+            this.lblRoomNo.Name = "lblRoomNo";
+            this.lblRoomNo.Size = new System.Drawing.Size(55, 13);
+            this.lblRoomNo.TabIndex = 248;
+            this.lblRoomNo.Text = "Room No:";
             // 
             // lblArrow1
             // 
@@ -205,8 +205,8 @@ namespace HotelReception.Forms
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblArrow1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblRoomNoIs);
+            this.Controls.Add(this.lblRoomNo);
             this.Controls.Add(this.btnSelectRoom);
             this.Controls.Add(this.lblLastNameIs);
             this.Controls.Add(this.lblFirstNameIs);
@@ -234,8 +234,8 @@ namespace HotelReception.Forms
         private System.Windows.Forms.Label lblFirstNameIs;
         private System.Windows.Forms.Label lblLastNameIs;
         private System.Windows.Forms.Button btnSelectRoom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRoomNoIs;
+        private System.Windows.Forms.Label lblRoomNo;
         private System.Windows.Forms.Label lblArrow1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

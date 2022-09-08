@@ -13,16 +13,14 @@ namespace HotelReception.Forms
 {
     public partial class MasterForm : Form
     {
-        protected string FormTitle;
         private static CustomerInfoViewModel _customerEdit = null;
+
+        private static RoomInfoViewModel _roomEdit = null;
         public MasterForm()
         {
             InitializeComponent();
         }
-        public static void CloseApplication()
-        {
-            Environment.Exit(Environment.ExitCode);
-        }
+        
         public void SetDataCustomer(CustomerInfoViewModel customerEdit)
         {
             _customerEdit = customerEdit;
@@ -35,9 +33,20 @@ namespace HotelReception.Forms
         {
             return _customerEdit;
         }
-        private void SetTitleForm()
+
+
+        public void SetDataRoom(RoomInfoViewModel customerEdit)
         {
-            //lblTitle.Text = FormTitle;
+            _roomEdit = customerEdit;
         }
+        public void RemoveDataRoom()
+        {
+            _roomEdit = null;
+        }
+        public RoomInfoViewModel GetDataRoom()
+        {
+            return _roomEdit;
+        }
+
     }
 }

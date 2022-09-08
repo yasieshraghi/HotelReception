@@ -18,11 +18,13 @@ namespace HotelReception.Common.Extensions
             return int.TryParse(value, NumberStyles.Any,
                 NumberFormatInfo.CurrentInfo, out var result) ? result : 0;
         }
-
-        public static long ToLong(this string value)
+        public static byte ToByte(this string value)
         {
-            return long.TryParse(value, NumberStyles.Any,
-                NumberFormatInfo.CurrentInfo, out var result) ? result : 0;
+            return byte.TryParse(value, NumberStyles.Any,
+                NumberFormatInfo.CurrentInfo, out var result) ? result : (byte)0;
         }
+
+        public static string GetTitle(this bool item) => item ? "Yas" : "No";
+
     }
 }

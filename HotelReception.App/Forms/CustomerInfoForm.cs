@@ -78,7 +78,7 @@ namespace HotelReception.Forms
 
         private void CmbGenderDataBind()
         {
-            var itemsEnum = MyExtensions.GetListItemsEnum<GenderType>().ToList();
+            var itemsEnum = MyExtensions.GetListItemsEnum<GenderType>();
             CmbGender.DataSource = itemsEnum;
             CmbGender.DisplayMember = "Description";
             CmbGender.ValueMember = "Value";

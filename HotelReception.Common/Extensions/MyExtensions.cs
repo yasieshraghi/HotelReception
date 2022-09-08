@@ -34,6 +34,7 @@ namespace HotelReception.Common.Extensions
 
             return result;
         }
+         
         public static TEnum StringToEnum<TEnum>(string nameValue) where TEnum : Enum
         {
             var singleOrDefault = Enum.GetNames(typeof(TEnum)).ToList().Single(c => string.Equals(c, nameValue, StringComparison.CurrentCultureIgnoreCase));

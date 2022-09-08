@@ -20,7 +20,7 @@ namespace HotelReception.Forms
 
         private void btnSelectCustomer_Click(object sender, EventArgs e)
         {
-             new CustomerInfoForm().ShowDialog();
+            new CustomerInfoForm().ShowDialog();
 
             var data = GetDataCustomer();
             if (data != null)
@@ -37,7 +37,28 @@ namespace HotelReception.Forms
 
         private void btnSelectRoom_Click(object sender, EventArgs e)
         {
+            new RoomForm().ShowDialog();
 
+            var data = GetDataRoom();
+            if (data != null)
+            {
+                lblRoomNoIs.Text = data.Number.ToString();
+                if (!data.Available && data.IsActive)
+                {
+                    btnCheckIn.Enabled = true;
+                }
+                else
+                {
+                    btnCheckOut.Enabled = true;
+
+                }
+
+            }
+            else
+            {
+                btnCheckIn.Enabled = false;
+                btnCheckOut.Enabled = false;
+            }
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
@@ -50,6 +71,6 @@ namespace HotelReception.Forms
 
         }
 
-         
+
     }
 }

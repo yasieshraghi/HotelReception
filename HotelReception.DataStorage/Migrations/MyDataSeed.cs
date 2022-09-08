@@ -15,7 +15,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 2,
                     CreationDate = DateTime.Now,
-                    Floor = 1,
+                    Floor = FloorType.One,
                     HasWindow = true,
                     IsActive = true,
                     Number = 101,
@@ -26,7 +26,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 2,
                     CreationDate = DateTime.Now,
-                    Floor = 2,
+                    Floor = FloorType.Two,
                     HasWindow = true,
                     IsActive = true,
                     Number = 201,
@@ -37,7 +37,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 1,
                     CreationDate = DateTime.Now,
-                    Floor = 1,
+                    Floor = FloorType.One,
                     HasWindow = true,
                     IsActive = true,
                     Number = 102,
@@ -48,7 +48,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 1,
                     CreationDate = DateTime.Now,
-                    Floor = 2,
+                    Floor = FloorType.Two,
                     HasWindow = false,
                     IsActive = true,
                     Number = 202,
@@ -60,7 +60,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 3,
                     CreationDate = DateTime.Now,
-                    Floor = 1,
+                    Floor = FloorType.One,
                     HasWindow = true,
                     IsActive = false,
                     Number = 100,
@@ -71,7 +71,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 3,
                     CreationDate = DateTime.Now,
-                    Floor = 2,
+                    Floor =  FloorType.Two,
                     HasWindow = true,
                     IsActive = false,
                     Number = 205,
@@ -83,7 +83,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 4,
                     CreationDate = DateTime.Now,
-                    Floor = 1,
+                    Floor =  FloorType.One,
                     HasWindow = true,
                     IsActive = true,
                     Number = 103,
@@ -95,7 +95,7 @@ namespace HotelReception.DataStorage.Migrations
                 {
                     BedNumbers = 2,
                     CreationDate = DateTime.Now,
-                    Floor = 4,
+                    Floor =  FloorType.Four,
                     HasWindow = true,
                     IsActive = true,
                     Number = 408,

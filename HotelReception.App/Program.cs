@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReception.Forms;
 
@@ -17,7 +14,8 @@ namespace HotelReception
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReceptionForm());
+            //Application.Run(new ReceptionForm());
+            Application.Run(new RoomForm());
         }
     }
 }

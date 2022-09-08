@@ -42,10 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\GenderType.cs" />
+    <Compile Include="Enums\FloorType.cs" />
     <Compile Include="Enums\RoomType.cs" />
     <Compile Include="Model\EnumObj.cs" />
     <Compile Include="Model\OperationResult.cs" />
+    <Compile Include="Model\Request\RoomAdd.cs" />
     <Compile Include="Model\Request\CustomerAdd.cs" />
+    <Compile Include="Model\Request\RoomEdit.cs" />
     <Compile Include="Model\Request\CustomerEdit.cs" />
     <Compile Include="Model\Request\ResarvationCheckIn.cs" />
     <Compile Include="Model\Request\ReservationCheckOut.cs" />

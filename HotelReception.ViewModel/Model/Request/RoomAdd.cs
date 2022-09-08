@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using HotelReception.DataStorage.BaseEntity;
-using HotelReception.ViewModel.Enums;
+﻿using HotelReception.ViewModel.Enums;
 
-namespace HotelReception.DataStorage.Entities
+namespace HotelReception.ViewModel.Model.Request
 {
-    public class RoomModel : BaseModel<int>
+    public class RoomAdd
     {
         public RoomType Type { get; set; }
         public long PricePerDay { get; set; }
@@ -13,7 +11,5 @@ namespace HotelReception.DataStorage.Entities
         public bool HasWindow { get; set; }
         public byte BedNumbers { get; set; }
         public bool IsActive { get; set; }
-
-        public virtual ICollection<ReservationModel> Reservations { get; set; }
     }
 }
