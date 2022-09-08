@@ -1,81 +1,143 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using HotelReception.Common.Extensions;
 using HotelReception.Common.MapperViewModel;
+using HotelReception.DataStorage.DbContexts;
 using HotelReception.DataStorage.Entities;
 using HotelReception.ViewModel.Model;
+using HotelReception.ViewModel.Model.Request;
+using HotelReception.ViewModel.Model.Response;
 
 namespace HotelReception.Business
 {
-    public class CustomerInfoBusiness : BaseBusiness<CustomerInfoModel>
+    public class CustomerInfoBusiness
     {
-        public async Task<CustomerInfo> GetByIdAsync(int id)
+
+        private static HotelReceptionContext _context;
+        private static HotelReceptionContext Instance => _context ?? (_context = new HotelReceptionContext());
+
+        public OperationResult<CustomerInfoViewModel> GetById(int id)
         {
-            var data = await Instance.CustomerInfo.SingleOrDefaultAsync(x => x.Id == id);
-            return data?.ToViewModel();
+            try
+            {
+
+                var data = Instance.CustomerInfo.SingleOrDefault(x => x.Id == id);
+                if (data is null)
+                    throw new Exception("Customer Not Fund");
+
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    IsSuccess = true,
+                    ErrorMessage = string.Empty,
+                    Data = data.ToViewModel(),
+                };
+            }
+            catch (Exception ex)
+            {
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    Data = null,
+                    ErrorMessage = ex.Message,
+                    IsSuccess = false,
+                };
+            }
         }
-        public async Task<List<CustomerInfoModel>> GetAll(int id)
+        public List<CustomerInfoViewModel> GetAll()
         {
-            return await Instance.CustomerInfo.ToListAsync();
+            var data = Instance.CustomerInfo.ToList();
+
+            return data.Select(c => c.ToViewModel()).ToList();
         }
-        //public async Task<List<CustomerInfoModel>> Search(string firstName, string lastName)
-        //{
-        //    //if (firstName is null) return new List<CustomerInfoModel>();
+        public OperationResult<CustomerInfoViewModel> Add(CustomerAdd model)
+        {
+            try
+            {
+                var entityModel = new CustomerInfoModel
+                {
+                    Gender = model.Gender,
+                    PhoneNumber = model.PhoneNumber,
+                    EmailAddress = model.EmailAddress,
+                    PassportNo = model.PassportNo,
+                    Age = model.Age,
+                    CreationDate = DateTime.Now,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                };
+                var customerInfoModel = Instance.CustomerInfo.Add(entityModel);
+                Instance.SaveChanges();
 
-        //    return await Instance.CustomerInfo.Where(c =>
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    IsSuccess = true,
+                    ErrorMessage = string.Empty,
+                    Data = customerInfoModel.ToViewModel()
+                };
+            }
+            catch (Exception ex)
+            {
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    Data = null,
+                    ErrorMessage = ex.Message,
+                    IsSuccess = false,
+                };
+            }
+        }
+        public OperationResult<CustomerInfoViewModel> Edit(CustomerEdit model)
+        {
+            try
+            {
 
-        //            (firstName == null || c.FirstName.ToLower().Contains(firstName.ToLower()))
-        //            &&
-        //           (lastName == null || c.LastName.ToLower().Contains(lastName.ToLower()))
+                var entityModel = Instance.CustomerInfo.SingleOrDefault(x => x.Id == model.CustomerInfoId);
+                if (entityModel is null)
+                    throw new Exception("Customer Not Fund");
 
-        //        ).ToListAsync();
-        //}
+                entityModel.Gender = model.Gender;
+                entityModel.PhoneNumber = model.PhoneNumber;
+                entityModel.EmailAddress = model.EmailAddress;
+                entityModel.PassportNo = model.PassportNo;
+                entityModel.Age = model.Age;
+                entityModel.FirstName = model.FirstName;
+                entityModel.LastName = model.LastName;
 
-        public async Task<List<CustomerInfo>> SearchQueryable(string firstName, string lastName)
+                var customerInfoModel = Instance.CustomerInfo.Attach(entityModel);
+                Instance.SaveChanges();
+
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    IsSuccess = true,
+                    ErrorMessage = string.Empty,
+                    Data = customerInfoModel.ToViewModel()
+                };
+            }
+            catch (Exception ex)
+            {
+                return new OperationResult<CustomerInfoViewModel>()
+                {
+                    Data = null,
+                    ErrorMessage = ex.Message,
+                    IsSuccess = false,
+                };
+            }
+        }
+
+
+        public List<CustomerInfoViewModel> SearchQueryable(string firstName, string lastName)
         {
             var data = Instance.CustomerInfo.AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(firstName))
+            if (!firstName.IsNullOrWhiteSpace())
                 data = data.Where(x => x.FirstName.ToLower().Contains(firstName.ToLower()));
 
-            if (!string.IsNullOrWhiteSpace(lastName))
+            if (!lastName.IsNullOrWhiteSpace())
                 data = data.Where(x => x.LastName.ToLower().Contains(lastName.ToLower()));
 
-
-            ////data = data.Where(x => x.RoomerCareTakers.Any(c => c.CareTakerId==10));
-
-            return await data.Select(c => c.ToViewModel()).ToListAsync();
-        }
-        public async Task<int> Add(CustomerInfoModel model)
-        {
-            Instance.CustomerInfo.Add(model);
-            await Instance.SaveChangesAsync();
-
-            return model.Id;
-        }
-        public async Task AddRange(IEnumerable<CustomerInfoModel> models)
-        {
-            Instance.CustomerInfo.AddRange(models);
-            await Instance.SaveChangesAsync();
-
-            return;
+            return data.Select(c => c.ToViewModel()).ToList();
         }
 
-        public async Task Attach(CustomerInfoModel model)
-        {
-            Instance.CustomerInfo.Attach(model);
-            await Instance.SaveChangesAsync();
-
-            return;
-        }
-        public async Task Remove(CustomerInfoModel model)
-        {
-            Instance.CustomerInfo.Remove(model);
-            await Instance.SaveChangesAsync();
-
-            return;
-        }
 
     }
 }

@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202209081200413_Init.designer.cs">
       <DependentUpon>202209081200413_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209081556490_ModifyCustomerTable.cs" />
+    <Compile Include="Migrations\202209081556490_ModifyCustomerTable.designer.cs">
+      <DependentUpon>202209081556490_ModifyCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\MyDataSeed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +84,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202209081200413_Init.resx">
       <DependentUpon>202209081200413_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209081556490_ModifyCustomerTable.resx">
+      <DependentUpon>202209081556490_ModifyCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

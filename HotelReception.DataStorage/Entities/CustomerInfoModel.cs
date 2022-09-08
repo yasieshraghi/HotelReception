@@ -7,19 +7,18 @@ namespace HotelReception.DataStorage.Entities
 {
     public class CustomerInfoModel : BaseModel<int>
     {
-        [StringLength(150)]
+        [StringLength(30)]
         public string FirstName { get; set; }
-        [StringLength(150)]
+        [StringLength(60)]
         public string LastName { get; set; }
         public GenderType Gender { get; set; }
-        [StringLength(30)]
+        [StringLength(14)]
         public string PhoneNumber { get; set; }
         [StringLength(70)]
         public string EmailAddress { get; set; }
-        [StringLength(20)]
+        [StringLength(12)]
         public string PassportNo { get; set; }
         public int Age { get; set; }
-        public bool HasCareTaker { get; set; }
 
         public virtual ICollection<ReservationModel> Reservations { get; set; }
 

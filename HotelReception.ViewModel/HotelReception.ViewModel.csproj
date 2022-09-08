@@ -43,7 +43,15 @@
   <ItemGroup>
     <Compile Include="Enums\GenderType.cs" />
     <Compile Include="Enums\RoomType.cs" />
-    <Compile Include="Model\CustomerInfo.cs" />
+    <Compile Include="Model\EnumObj.cs" />
+    <Compile Include="Model\OperationResult.cs" />
+    <Compile Include="Model\Request\CustomerAdd.cs" />
+    <Compile Include="Model\Request\CustomerEdit.cs" />
+    <Compile Include="Model\Request\ResarvationCheckIn.cs" />
+    <Compile Include="Model\Request\ReservationCheckOut.cs" />
+    <Compile Include="Model\Response\CustomerInfoViewModel.cs" />
+    <Compile Include="Model\Response\ReservationInfoViewModel.cs" />
+    <Compile Include="Model\Response\RoomInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

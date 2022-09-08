@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CustomerInfo.cs">
+    <Compile Include="Forms\CustomerInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerInfo.Designer.cs">
-      <DependentUpon>CustomerInfo.cs</DependentUpon>
+    <Compile Include="Forms\CustomerInfoForm.Designer.cs">
+      <DependentUpon>CustomerInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\CustomerInfo.resx">
-      <DependentUpon>CustomerInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CustomerInfoForm.resx">
+      <DependentUpon>CustomerInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -108,7 +108,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HotelReception.Business\HotelReception.Business.csproj">
+      <Project>{2C931D09-451A-438C-958A-DDA725D1093E}</Project>
+      <Name>HotelReception.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReception.Common\HotelReception.Common.csproj">
+      <Project>{934DBC71-6179-459C-BAA0-00E37F7DE018}</Project>
+      <Name>HotelReception.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelReception.ViewModel\HotelReception.ViewModel.csproj">
+      <Project>{19D1B2D0-A886-43EC-A9E8-CD6088386B79}</Project>
+      <Name>HotelReception.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

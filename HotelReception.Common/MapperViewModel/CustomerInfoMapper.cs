@@ -1,25 +1,26 @@
 ﻿using HotelReception.Common.Extensions;
 using HotelReception.DataStorage.Entities;
-using HotelReception.ViewModel.Model;
+using HotelReception.ViewModel.Model.Response;
 
 namespace HotelReception.Common.MapperViewModel
 {
     public static class CustomerInfoMapper
     {
-        public static CustomerInfo ToViewModel(this CustomerInfoModel model)
+        public static CustomerInfoViewModel ToViewModel(this CustomerInfoModel model)
         {
-            return new CustomerInfo
+            return new CustomerInfoViewModel
             {
+                CustomerInfoId = model.Id,
                 Age = model.Age,
                 EmailAddress = model.EmailAddress,
-                FirstName = model.FirstName,
+                FirstName = model.FirstName, 
                 Gender = model.Gender,
                 GenderTitle = model.Gender.GetDescription(),
                 LastName = model.LastName,
-                HasCareTaker = model.HasCareTaker,
                 PassportNo = model.PassportNo,
                 PhoneNumber = model.PhoneNumber,
+
             };
-        }
+        } 
     }
 }
