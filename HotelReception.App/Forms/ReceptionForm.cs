@@ -182,7 +182,7 @@ namespace HotelReception.Forms
                     {
                         var checkOut = new ReservationCheckOut
                         {
-                            ReservationId = selectCustomer.CustomerInfoId,
+                            ReservationId = result.Data.ReservationId,
                         };
                         var operationResult = _appBusiness.CheckOut(checkOut);
                         if (operationResult.IsSuccess)

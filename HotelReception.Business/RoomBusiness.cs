@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using HotelReception.Common.Extensions;
 using HotelReception.Common.MapperViewModel;
 using HotelReception.DataStorage.DbContexts;
 using HotelReception.DataStorage.Entities;
@@ -22,7 +23,7 @@ namespace HotelReception.Business
             try
             {
 
-                var data = Instance.Room.Include(c=>c.Reservations).SingleOrDefault(x => x.Id == id);
+                var data = Instance.Room.Include(c => c.Reservations).SingleOrDefault(x => x.Id == id);
                 if (data is null)
                     throw new Exception("Room Not Fund");
 
@@ -48,11 +49,30 @@ namespace HotelReception.Business
         public List<RoomInfoViewModel> GetAll()
         {
             //todo: Group by
-            var data = Instance.Room.Include(c => c.Reservations).ToList();
+            var daList = Instance.Room.Include(c => c.Reservations).ToList();
 
-            return data.Select(c => c.ToViewModel(c.Reservations.Any(x => x.CheckOutDate != null)))
-                              .OrderBy(c=>c.Floor)
-                              .ThenBy(c=>c.Number).ToList();
+
+            var data = daList.Select(c => new RoomInfoViewModel
+            {
+                AvailableTitle = c.Reservations.Any(x => x.CheckOutDate != null).GetTitle(),
+                Available = c.Reservations.Any(x => x.CheckOutDate != null),
+                ActiveTitle = c.IsActive.GetTitle(),
+                BedNumbers = c.BedNumbers,
+                Floor = c.Floor,
+                HasWindow = c.HasWindow,
+                IsActive = c.IsActive,
+                Number = c.Number,
+                PricePerDay = c.PricePerDay,
+                RoomId = c.Id,
+                Type = c.Type,
+                WindowTitle = c.HasWindow.GetTitle(),
+                TypeTitle = c.Type.GetDescription(),
+
+            }).ToList();
+
+
+
+            return data.ToList();
         }
         public OperationResult<RoomInfoViewModel> Add(RoomAdd model)
         {
