@@ -17,24 +17,25 @@ git clone https://github.com/yasieshraghi/HotelReception.git
 
 ### Initialize the project
 
-Step 1: You need version VS.2019 or ++
+Step 1: You need version VS.2019 plus
 
 Step 2: EntityFramework -Version 6.4.4
-
+If not install nuget automaticly == >>>
 example: ==>    install nuget ==> https://www.nuget.org/packages/EntityFramework
 
 				pm> Install-Package EntityFramework -Version 6.4.4
 
-Step 3: Set your connctionstring in 
-				HotelReception.DataStorage layer / App.config file
+Step 3: config your connctionstring in 
+				HotelReception.DataStorage and HotelReception.App  =>> lib / App.config file
 				
-Note: Set 1-Server Address  2-User  3-Pass
+Note for config connectionString : Set =>>> your Server Address / your User ID /  your Password
 				
-example: ==>    <add name="HotelReception" connectionString="Data Source=DESKTOP-FMGH8KG;Initial Catalog=HotelReception;Persist Security Info=True;User ID=sa;Password=1qaz@WSX;MultipleActiveResultSets=True" providerName="System.Data.SqlClient" />
+example: ==>    <add name="HotelReception" connectionString="Data Source=  your Server Address  ;Initial Catalog=HotelReception;Persist Security Info=True;User ID= your User ID ;Password=   your Password ;MultipleActiveResultSets=True" providerName="System.Data.SqlClient" />
 
+If the database is not created== >>>
 Step 4: Write Update-database in Package Maneger Console
 
-**Note** ==> set DataStorage layer as startup first
+**Note** ==> set DataStorage layer ==> Set as startup 
 
 
 Your feedback is valuable!
