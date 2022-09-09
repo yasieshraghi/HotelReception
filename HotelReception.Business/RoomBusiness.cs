@@ -47,6 +47,7 @@ namespace HotelReception.Business
         }
         public List<RoomInfoViewModel> GetAll()
         {
+            //todo: Group by
             var data = Instance.Room.Include(c => c.Reservations).ToList();
 
             return data.Select(c => c.ToViewModel(c.Reservations.Any(x => x.CheckOutDate != null)))

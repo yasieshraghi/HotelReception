@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202209081556490_ModifyCustomerTable.designer.cs">
       <DependentUpon>202209081556490_ModifyCustomerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209082234247_ModifyReservationTable.cs" />
+    <Compile Include="Migrations\202209082234247_ModifyReservationTable.designer.cs">
+      <DependentUpon>202209082234247_ModifyReservationTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\MyDataSeed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209081556490_ModifyCustomerTable.resx">
       <DependentUpon>202209081556490_ModifyCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209082234247_ModifyReservationTable.resx">
+      <DependentUpon>202209082234247_ModifyReservationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

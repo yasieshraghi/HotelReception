@@ -53,6 +53,7 @@
     <Compile Include="Model\Request\ResarvationCheckIn.cs" />
     <Compile Include="Model\Request\ReservationCheckOut.cs" />
     <Compile Include="Model\Response\CustomerInfoViewModel.cs" />
+    <Compile Include="Model\Response\ReservationInfoGridViewModel.cs" />
     <Compile Include="Model\Response\ReservationInfoViewModel.cs" />
     <Compile Include="Model\Response\RoomInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

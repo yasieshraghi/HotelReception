@@ -31,7 +31,7 @@ namespace HotelReception.Forms
         {
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.dataGridCustomer = new System.Windows.Forms.DataGridView();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.btnSelectCustomer = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
@@ -44,7 +44,8 @@ namespace HotelReception.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).BeginInit();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLastName
@@ -65,18 +66,19 @@ namespace HotelReception.Forms
             this.lblFirstName.TabIndex = 226;
             this.lblFirstName.Text = "First Name:";
             // 
-            // dataGridCustomer
+            // dataGrid
             // 
-            this.dataGridCustomer.AllowUserToDeleteRows = false;
-            this.dataGridCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCustomer.Location = new System.Drawing.Point(11, 206);
-            this.dataGridCustomer.MultiSelect = false;
-            this.dataGridCustomer.Name = "dataGridCustomer";
-            this.dataGridCustomer.ReadOnly = true;
-            this.dataGridCustomer.Size = new System.Drawing.Size(935, 254);
-            this.dataGridCustomer.TabIndex = 228;
+            this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(11, 206);
+            this.dataGrid.MultiSelect = false;
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.Size = new System.Drawing.Size(935, 254);
+            this.dataGrid.TabIndex = 228;
+            this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
             // 
             // btnSelectCustomer
             // 
@@ -197,10 +199,21 @@ namespace HotelReception.Forms
             this.label5.TabIndex = 253;
             this.label5.Text = "=>";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(827, 162);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(119, 34);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ReceptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(959, 470);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -213,12 +226,13 @@ namespace HotelReception.Forms
             this.Controls.Add(this.btnSelectCustomer);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnCheckIn);
-            this.Controls.Add(this.dataGridCustomer);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Name = "ReceptionForm";
             this.Text = "ReceptionInfo";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).EndInit();
+            this.Load += new System.EventHandler(this.ReceptionForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +241,7 @@ namespace HotelReception.Forms
         #endregion
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.DataGridView dataGridCustomer;
+        private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Button btnSelectCustomer;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnCheckIn;
@@ -240,5 +254,6 @@ namespace HotelReception.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

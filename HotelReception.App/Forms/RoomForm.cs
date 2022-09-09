@@ -67,7 +67,7 @@ namespace HotelReception.Forms
             {
                 ResetForm();
                 return;
-            } 
+            }
 
             cmbFloor.SelectedValue = _roomEdit.Floor.GetHashCode();
             txtNumber.Text = _roomEdit.Number.ToString();
@@ -171,18 +171,18 @@ namespace HotelReception.Forms
             {
                 MessageBox.Show("Price Per Day is Required !, Please enter the correct value.", "Warning");
                 return false;
-            } 
-            
+            }
+
             if (txtBedNumbers.Text.IsNullOrWhiteSpace() || !txtBedNumbers.Text.IsNumeric())
             {
                 MessageBox.Show("Bed Numbers is Required !, Please enter the correct value.", "Warning");
                 return false;
-            } 
+            }
             if (txtNumber.Text.IsNullOrWhiteSpace() || !txtNumber.Text.IsNumeric())
             {
                 MessageBox.Show("Number is Required !, Please enter the correct value.", "Warning");
                 return false;
-            } 
+            }
 
             return true;
 
@@ -254,9 +254,40 @@ namespace HotelReception.Forms
 
         private void btnGoToReception_Click(object sender, EventArgs e)
         {
+            if (!ValidationSelectedRoom()) return;
+
             SetDataRoom(_roomEdit);
 
             Close();
+        }
+        private bool ValidationSelectedRoom()
+        {
+            if (_roomEdit is null)
+            {
+                MessageBox.Show("Please Select the Room in Grid View.", "Warning");
+                return false;
+            }
+
+            if (!_roomEdit.IsActive)
+            {
+                MessageBox.Show("Please Select the Active Room.", "Warning");
+                return false;
+            }
+
+            if (_roomEdit.Available)
+            {
+                MessageBox.Show("Please Select the UnAvailable Room.", "Warning");
+                return false;
+            }
+            var selectCustomer = GetDataCustomer();
+
+            if (selectCustomer == null)
+            {
+                MessageBox.Show("Please Select a Customer", "Warning");
+                return false;
+            }
+             
+            return true;
         }
     }
 }

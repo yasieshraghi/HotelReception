@@ -8,11 +8,8 @@ namespace HotelReception.DataStorage.Entities
 
         public int CustomerInfoId { get; set; }
         public int RoomId { get; set; }
-
-        public int StayDurationPerDay { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime? CheckOutDate { get; set; }
-
 
         public virtual RoomModel Room { get; set; }
 

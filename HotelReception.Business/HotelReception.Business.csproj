@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReservationBusiness.cs" />
     <Compile Include="RoomBusiness.cs" />
     <Compile Include="CustomerInfoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

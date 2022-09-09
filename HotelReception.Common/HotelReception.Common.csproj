@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Extensions\MyExtensions.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="MapperViewModel\ReservationInfoMapper.cs" />
     <Compile Include="MapperViewModel\RoomInfoMapper.cs" />
     <Compile Include="MapperViewModel\CustomerInfoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
